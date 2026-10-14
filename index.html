@@ -15,7 +15,17 @@
 <article class="card"><h3>🪙 اجمع العملات</h3><p class="muted">كل عملة تمنحك نقاطاً إضافية. حاول تحطيم أفضل نتيجة.</p></article>
 <article class="card"><h3>🛟 مركز مساعدة</h3><p class="muted">إذا ما اشتغلت يد التحكم، جرّب أزرار الاتجاهات الظاهرة تحت اللعبة.</p></article>
 </section>
-<section id="gamePanel" aria-label="اللعبة"><div class="gamebar"><div>النقاط: <b id="score">0</b>　🪙 العملات: <b id="coins">0</b>　❤️ الأرواح: <b id="lives">3</b>　🏆 الأفضل: <b id="best">0</b></div><div><button class="btn" id="start">ابدأ اللعب ▶</button> <button class="btn" id="closeGame">إغلاق ✕</button></div></div>
+
+<section class="hero" style="margin-top:18px"><h2>🧰 أدوات NEXUS</h2><p>أدوات تفاعلية تشتغل داخل المتصفح بدون تحميل.</p></section>
+<section class="grid" id="nexusTools">
+<article class="card"><h3>🕒 الساعة الحية</h3><div id="nexusClock" style="font-size:25px;color:var(--cyan);font-weight:bold">--:--:--</div><p class="muted">وقت جهازك الحالي.</p></article>
+<article class="card"><h3>📡 فحص المتصفح</h3><p id="browserStatus" class="muted">اضغط للفحص.</p><button class="btn" id="checkBrowser">افحص الآن</button></article>
+<article class="card"><h3>💡 مولّد الأفكار والتحديات</h3><p id="ideaOutput" class="muted">اضغط حتى تحصل على فكرة جديدة.</p><button class="btn" id="newIdea">ولّد فكرة</button></article>
+<article class="card"><h3>✅ لوحة المهام</h3><form id="taskForm" style="display:flex;gap:6px;flex-wrap:wrap"><input id="taskInput" maxlength="70" placeholder="اكتب مهمة..." style="flex:1;min-width:130px;padding:10px;border-radius:8px;border:1px solid var(--line);background:#071120;color:white"><button class="btn" type="submit">إضافة</button></form><ul id="taskList" style="padding-right:20px;line-height:2"></ul><p class="muted">تبقى المهام محفوظة على نفس المتصفح إذا كان التخزين مدعوماً.</p></article>
+<article class="card"><h3>🧪 مختبر التجارب</h3><p class="muted">اختبر استجابة الواجهة وولّد نتيجة عشوائية محلية.</p><button class="btn" id="runExperiment">تشغيل تجربة</button><p id="experimentOutput" class="muted">جاهز للتجربة.</p></article>
+<article class="card"><h3>📋 سجل النشاطات</h3><p id="activityOutput" class="muted">تم تشغيل مركز NEXUS.</p><button class="btn" id="clearActivity">مسح السجل</button></article>
+</section>
+\n<section id="gamePanel" aria-label="اللعبة"><div class="gamebar"><div>النقاط: <b id="score">0</b>　🪙 العملات: <b id="coins">0</b>　❤️ الأرواح: <b id="lives">3</b>　🏆 الأفضل: <b id="best">0</b></div><div><button class="btn" id="start">ابدأ اللعب ▶</button> <button class="btn" id="closeGame">إغلاق ✕</button></div></div>
 <canvas id="game" width="960" height="540">متصفحك لا يدعم Canvas.</canvas><div class="controls" id="zoneControls"><button class="btn selected" data-zone="0">🏙️ وسط المدينة</button><button class="btn" data-zone="1">🌳 الحديقة</button><button class="btn" data-zone="2">🌃 المدينة الليلية</button></div><div class="controls"><button class="btn" id="buyShield">🛡️ درع (10)</button><button class="btn" id="buyMagnet">🧲 جذب العملات (15)</button><button class="btn" id="buyRepair">❤️ إصلاح (8)</button></div>
 <div class="controls"><button class="btn" data-dir="up">⬆️</button><button class="btn" data-dir="left">⬅️</button><button class="btn" data-dir="down">⬇️</button><button class="btn" data-dir="right">➡️</button><button class="btn" id="pause">إيقاف مؤقت Ⅱ</button></div><p class="muted" style="text-align:center">يد PS4: العصا اليسرى أو الأسهم / D-pad. اختار منطقة، اجمع العملات واشترِ الترقيات.</p><div id="gameMessage">اضغط ابدأ اللعب للانطلاق.</div></section>
 </main><footer>© MCHAWE STUDIO · NEXUS · لعبة متصفح محلية</footer>
