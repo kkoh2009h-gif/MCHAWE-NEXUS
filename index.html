@@ -44,10 +44,10 @@ const $=s=>document.querySelector(s),modal=$('#modal'),log=$('#log');function re
  const isPS4=/PlayStation 4|PlayStation 5|PlayStation Vita/i.test(ua);
  badge.textContent=isPS4?'🎮 تم اكتشاف متصفح PlayStation':'🌐 جهاز: '+(/Android/i.test(ua)?'Android':/iPhone|iPad/i.test(ua)?'iPhone/iPad':/Windows/i.test(ua)?'Windows':'متصفح ويب');
  badge.style.color=isPS4?'#75ffd4':'var(--cyan)';
- try{endpoint.value=localStorage.getItem('nexus-ai-endpoint')||''}catch(e){}
+ try{endpoint.value=localStorage.getItem('nexus-ai-endpoint')||'https://mchawe-nexus-ai.kkoh2009h.workers.dev'}catch(e){}
  document.getElementById('saveAiEndpoint').addEventListener('click',function(){const v=endpoint.value.trim().replace(/\/$/,'');try{localStorage.setItem('nexus-ai-endpoint',v);status.textContent='تم الحفظ';status.style.color='#75ffd4'}catch(e){status.textContent='تعذر الحفظ';} });
  function line(who,text){const d=document.createElement('div');d.style.cssText='padding:7px 0;border-bottom:1px solid #11243d;white-space:pre-wrap;overflow-wrap:anywhere';const b=document.createElement('b');b.style.color=who==='أنت'?'#fff':'var(--cyan)';b.textContent=who+': ';d.appendChild(b);d.appendChild(document.createTextNode(text));messages.appendChild(d);messages.scrollTop=messages.scrollHeight;return d}
- form.addEventListener('submit',async function(e){e.preventDefault();const prompt=input.value.trim();if(!prompt)return;input.value='';line('أنت',prompt);let url='';try{url=localStorage.getItem('nexus-ai-endpoint')||''}catch(e){}
+ form.addEventListener('submit',async function(e){e.preventDefault();const prompt=input.value.trim();if(!prompt)return;input.value='';line('أنت',prompt);let url='';try{url=localStorage.getItem('nexus-ai-endpoint')||'https://mchawe-nexus-ai.kkoh2009h.workers.dev'}catch(e){}
  if(!url){line('NEXUS','واجهة الدردشة جاهزة، لكن الذكاء الاصطناعي غير مربوط بعد. افتح «إعداد ربط الذكاء الاصطناعي» وأضف رابط الخادم الآمن.');return}
  const wait=line('NEXUS','لحظة، دا أتصل بالخادم...');
  try{const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:prompt})});const data=await res.json();wait.remove();if(!res.ok)throw new Error(data.error||'الخادم رجّع خطأ');line('NEXUS',data.reply||data.text||'وصل رد فارغ من الخادم.')}
